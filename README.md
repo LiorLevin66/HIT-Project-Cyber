@@ -1,5 +1,7 @@
 # Comunication_LTD - Part A (secure version)
 
+Full explanation of every file and function (in Hebrew): [CODE_EXPLANATION.md](CODE_EXPLANATION.md)
+
 ## Project structure
 
 ```
