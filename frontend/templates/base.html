@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Comunication_LTD{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h2>Comunication_LTD</h2>
+        {% if user %}
+        <div class="menu">
+            Hello {{ user.username }} |
+            <a href="{{ url_for('system') }}">System</a> |
+            <a href="{{ url_for('change_password') }}">Change password</a> |
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

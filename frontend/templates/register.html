@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>Register</h1>
+
+{% for e in errors %}
+<p class="error">{{ e }}</p>
+{% endfor %}
+
+<form method="post">
+    <label>Username</label>
+    <input type="text" name="username" value="{{ username }}" required>
+
+    <label>Email</label>
+    <input type="email" name="email" value="{{ email }}" required>
+
+    <label>Password</label>
+    <input type="password" name="password" id="password" required>
+
+    <label>Confirm password</label>
+    <input type="password" name="confirm" id="confirm" required>
+
+    {% with history=False %}{% include "password_rules.html" %}{% endwith %}
+
+    <button type="submit">Register</button>
+</form>
+
+<p><a href="{{ url_for('login') }}">Already have a user? Login</a></p>
+<script src="{{ url_for('static', filename='password.js') }}"></script>
+{% endblock %}
